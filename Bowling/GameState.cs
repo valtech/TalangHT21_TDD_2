@@ -1,7 +1,15 @@
-namespace Bowling {
+using System.Text.Json.Serialization;
+
+namespace Bowling
+{
+  public record Throw {
+    public int ThrowOne {get; init;}
+    public int ThrowTwo {get; init;}
+  };
+
   public record GameState {
-    public int[,] board = new int[12, 2];
-    public int currentMove = 1;
-    public int currentThrow = 1;
-  }
+    public Throw[] Frames {get; init;}
+    public int CurrentFrame {get; init;}
+    public int CurrentThrow {get; init;}
+  };
 }
